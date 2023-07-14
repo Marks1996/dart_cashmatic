@@ -1,7 +1,8 @@
 name: dart_cashmatic
 description: 自助收银机（Cashmatic SELFpay 1060）
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/Marks1996/dart_cashmatic
+publish_to: https://pub.dev/
 
 environment:
   sdk: ">=2.19.2 <3.0.0"

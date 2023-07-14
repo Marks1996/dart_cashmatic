@@ -17,8 +17,8 @@ void main() {
       print(login.toJson());
     });
     test('cancelPayment', () async {
-      var login = await CashMatic.login(url, username, password);
-      var res = await CashMatic.cancelPayment(url);
+      await CashMatic.login(url, username, password);
+      await CashMatic.cancelPayment(url);
       // print(res.toJson());
     });
 
@@ -30,31 +30,31 @@ void main() {
     }
 
     test('startPayment', () async {
-      var login = await CashMatic.login(url, username, password);
-      var res = await CashMatic.startPayment(
+      await CashMatic.login(url, username, password);
+      await CashMatic.startPayment(
           url, 'test commit payment', '7/2023', 10, true);
       await getActiveTransactionFun();
     });
 
     test('commitPayment', () async {
-      var login = await CashMatic.login(url, username, password);
-      var res = await CashMatic.commitPayment(url);
+      await CashMatic.login(url, username, password);
+      await CashMatic.commitPayment(url);
     });
 
     test('getActiveTransaction', () async {
-      var login = await CashMatic.login(url, username, password);
+      await CashMatic.login(url, username, password);
       var res = await CashMatic.getActiveTransaction(url);
 
       print(res.toJson());
     });
     test('lastTransaction', () async {
-      var login = await CashMatic.login(url, username, password);
+      await CashMatic.login(url, username, password);
       var res = await CashMatic.lastTransaction(url);
       print(res.toJson());
     });
 
     test('getTransaction', () async {
-      var login = await CashMatic.login(url, username, password);
+      await CashMatic.login(url, username, password);
       var res = await CashMatic.getTransaction(url, 1175);
       print(res.toJson());
     });

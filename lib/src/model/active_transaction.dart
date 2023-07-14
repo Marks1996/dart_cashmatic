@@ -52,7 +52,7 @@ class ActiveTransaction extends BaseType {
           json['denominationsTransfered'] as List<dynamic>?,
     );
   }
-
+  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'operation': operation,
