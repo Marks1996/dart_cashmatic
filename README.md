@@ -1,7 +1,10 @@
 ## 快速开始
-加入引用
-```bash
-dart pub add dart_cashmatic
+加入引用 pubspec.yml
+```yml
+dependencies:
+  dart_cashmatic:
+    git:
+      url: https://github.com/Marks1996/dart_cashmatic.git
 ```
 
 在使用的部分引用 
