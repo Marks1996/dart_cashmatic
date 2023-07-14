@@ -2,7 +2,7 @@ name: dart_cashmatic
 description: Cashmatic SELFpay 1060
 version: 1.0.0
 repository: https://github.com/Marks1996/dart_cashmatic
-publish_to: https://pub.dev/
+publish_to: https://pub.flutter-io.cn/
 
 environment:
   sdk: ">=2.19.2 <3.0.0"

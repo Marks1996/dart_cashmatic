@@ -27,7 +27,7 @@ class CashMatic {
   /// [reference] 支付参考
   /// [amount] 支付金额
   /// [queueAllowed] 是否允许排队
-  static Future<void> startPayment(
+  static Future<Result> startPayment(
     String url,
     String reason,
     String reference,
@@ -35,7 +35,7 @@ class CashMatic {
     bool queueAllowed,
   ) async {
     url += Urls.startPayment;
-    await _http.post(url, data: {
+    return await _http.post(url, data: {
       'reason': reason,
       'reference': reference,
       'amount': amount,
@@ -45,16 +45,16 @@ class CashMatic {
 
   /// 取消支付
   /// [url] 服务器地址
-  static Future<void> cancelPayment(String url) async {
+  static Future<Result> cancelPayment(String url) async {
     url += Urls.cancelPayment;
-    await _http.post(url);
+    return await _http.post(url);
   }
 
   /// 提交支付
   /// [url] 服务器地址
-  static Future<void> commitPayment(String url) async {
+  static Future<Result> commitPayment(String url) async {
     url += Urls.commitPayment;
-    await _http.post(url);
+    return await _http.post(url);
   }
 
   /// 获取活动交易
