@@ -4,3 +4,4 @@
 library dart_cashmatic;
 
 export 'src/dart_cashmatic_base.dart';
+export 'src/model/export.dart';
