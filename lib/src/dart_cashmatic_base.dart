@@ -62,7 +62,8 @@ class CashMatic {
   static Future<Result<ActiveTransaction>> getActiveTransaction(
       String url) async {
     url += Urls.activeTransaction;
-    final result = await _http.post<ActiveTransaction>(url);
+    final result = await _http.post<ActiveTransaction>(url,
+        jsonAsT: ActiveTransaction.fromJson);
     return result;
   }
 
