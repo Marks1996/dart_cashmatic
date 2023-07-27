@@ -32,7 +32,7 @@ void main() {
     test('startPayment', () async {
       await CashMatic.login(url, username, password);
       await CashMatic.startPayment(
-          url, 'test commit payment', '7/2023', 10, true);
+          url, 'test commit payment', '7/2023', 399, true);
       await getActiveTransactionFun();
     });
 
