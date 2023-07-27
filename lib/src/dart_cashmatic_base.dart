@@ -69,23 +69,23 @@ class CashMatic {
 
   /// 获取最后一笔交易
   /// [url] 服务器地址
-  static Future<Result<Transcation>> lastTransaction(String url) async {
+  static Future<Result<Transaction>> lastTransaction(String url) async {
     url += Urls.lastTransaction;
     final result =
-        await _http.post<Transcation>(url, jsonAsT: Transcation.fromJson);
+        await _http.post<Transaction>(url, jsonAsT: Transaction.fromJson);
     return result;
   }
 
   /// 根据ID获取交易
   /// [url] 服务器地址
-  static Future<Result<Transcation>> getTransaction(
+  static Future<Result<Transaction>> getTransaction(
       String url, num transactionId) {
     url += Urls.getTransaction;
-    return _http.post<Transcation>(url,
+    return _http.post<Transaction>(url,
         data: {
           'transactionId': transactionId,
         },
-        jsonAsT: Transcation.fromJson);
+        jsonAsT: Transaction.fromJson);
   }
 
   /// 获取设备信息

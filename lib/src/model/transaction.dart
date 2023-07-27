@@ -2,7 +2,7 @@ import 'base_type.dart';
 import 'pieces_in.dart';
 import 'pieces_out.dart';
 
-class Transcation extends BaseType {
+class Transaction extends BaseType {
   int? id;
   int? requested;
   int? inserted;
@@ -27,7 +27,7 @@ class Transcation extends BaseType {
   List<PiecesOut>? piecesOut;
   List<dynamic>? piecesTransfered;
 
-  Transcation({
+  Transaction({
     this.id,
     this.requested,
     this.inserted,
@@ -53,7 +53,7 @@ class Transcation extends BaseType {
     this.piecesTransfered,
   });
 
-  factory Transcation.fromJson(Map<String, dynamic> json) => Transcation(
+  factory Transaction.fromJson(Map<String, dynamic> json) => Transaction(
         id: json['id'] as int?,
         requested: json['requested'] as int?,
         inserted: json['inserted'] as int?,
