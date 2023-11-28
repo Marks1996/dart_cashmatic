@@ -43,7 +43,9 @@ class Http {
       request.headers.set('Authorization', _authroization);
     }
     if (data != null) {
-      request.add(utf8.encode(jsonEncode(data)));
+      String jsonStr = jsonEncode(data);
+      request.headers.add('Content-Length', jsonStr.length);
+      request.add(utf8.encode(jsonStr));
     }
     HttpClientResponse response = await request.close();
     String resultStr = await response.transform(utf8.decoder).join();
