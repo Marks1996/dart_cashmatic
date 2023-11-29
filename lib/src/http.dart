@@ -44,8 +44,10 @@ class Http {
     }
     if (data != null) {
       String jsonStr = jsonEncode(data);
-      request.headers.add('Content-Length', jsonStr.length);
-      request.add(utf8.encode(jsonStr));
+      final requestData = utf8.encode(jsonStr);
+      request.headers.add('Content-Length', requestData.length);
+      request.add(requestData);
+      await request.flush();
     }
     HttpClientResponse response = await request.close();
     String resultStr = await response.transform(utf8.decoder).join();
